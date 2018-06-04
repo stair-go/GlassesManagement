@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<package name="ssh1" extends="struts-default" namespace="/">
+		
+		<!-- 管理者配置 -->
+		<action name="admin_*" class="adminAction" method="{1}">
+			<result name="success">/jsp/success.jsp</result>
+			<result name="error" >/jsp/error.jsp</result>
+			<result name="login" >/main.jsp</result>
+			<result name="againenter">index.jsp</result>   <!-- 登录失败,重新登录 -->
+			<result name="loginerror">/login.jsp</result>
+			<result name="initedit">/jsp/admin/edit.jsp</result>
+			<result name="list">/jsp/customer/list.jsp</result>
+			<result name="listdelete">/jsp/customer/listdelete.jsp</result>
+			<result name="list2">/jsp/customer/list2.jsp</result>
+			<result name="listadmin">/jsp/admin/list.jsp</result>
+		</action>
+		<!-- 客户管理 -->
+		<action name="customer_*" class="customerAction" method="{1}">
+			<result name="success">/jsp/success.jsp</result>
+			<result name="error" >/jsp/error.jsp</result>
+			<result name="initedit">/jsp/customer/edit.jsp</result>
+			<result name="see">/jsp/customer/see.jsp</result>
+			<result name="page">/jsp/customer/see.jsp</result>
+		</action>
+		
+		<action name="fatie_*" class="fatieAction" method="{1}">
+			<result name="success">/jsp/success.jsp</result>
+			<result name="list">/jsp/fatie/list.jsp</result>
+			<result name="see">/jsp/fatie/see.jsp</result>
+		</action>
+	</package>
+    
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<!-- 配置类和表结构的映射 -->
+	<class name="com.domain.Customer" table="customer">
+		<!-- 配置id 
+			见到name属性，JavaBean的属性
+			见到column属性，是表结构的字段
+		-->
+		<id name="id" column="id">
+			<!-- 主键的生成策略 native mysql下会自动增长-->
+			<generator class="native"/>
+		</id>
+			
+		
+				
+		<!-- 配置其他的属性 -->
+		<property name="username" column="username"/>
+		<property name="age" column="age"/>
+		<property name="phone" column="phone"/>				
+		<property name="address" column="address"/>
+		<property name="lefteye" column="lefteye"/>
+		<property name="sglefteye" column="sglefteye"/>
+		<property name="righteye" column="righteye"/>
+		<property name="sgrighteye" column="sgrighteye"/>
+		<property name="glasses" column="glasses"/>
+		<property name="price" column="price"/>
+		<property name="notes" column="notes"/>
+		<property name="lens" column="lens"/>
+		<property name="sort" column="sort"/>
+		<property name="ztj" column="ztj"/>
+		<property name="xjg" column="xjg"/>
+		<property name="dateNowStr" column="dateNowStr"/>
+		<property name="lensprice" column="lensprice"/>
+		<property name="glassesprice" column="glassesprice"/>
+		
+		
+		
+		<many-to-one name="admin" class="com.domain.Admin" column="a_c_id" lazy="false" cascade="save-update"/>
+		
+   	</class>
+   	
+</hibernate-mapping>		
